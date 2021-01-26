@@ -1,4 +1,4 @@
-package com.devmeist3r.appminhaideiadb.datamodel;
+package com.devmeist3r.appminhaideiadb.controller;
 
 public interface ICrud {
     public void incluir();
