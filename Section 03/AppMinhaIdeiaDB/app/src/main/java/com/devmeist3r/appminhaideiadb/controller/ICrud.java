@@ -1,6 +1,6 @@
 package com.devmeist3r.appminhaideiadb.datamodel;
 
-public interface ICrud<C> {
+public interface ICrud {
     public void incluir();
     public void alterar();
     public void deletar();
