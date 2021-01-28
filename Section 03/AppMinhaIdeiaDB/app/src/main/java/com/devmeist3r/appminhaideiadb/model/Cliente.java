@@ -5,7 +5,7 @@ import android.util.Log;
 import com.devmeist3r.appminhaideiadb.api.AppUtil;
 import com.devmeist3r.appminhaideiadb.controller.ICrud;
 
-public class Cliente implements ICrud {
+public class Cliente implements ICrud<Cliente> {
 
     private int id; // chave primaria no banco de dados
     private String nome;
@@ -35,24 +35,25 @@ public class Cliente implements ICrud {
         this.id = id;
     }
 
+
     @Override
-    public void incluir() {
-        Log.i(AppUtil.TAG, "incluir: Cliente");
+    public void incluir(Cliente obj) {
+
     }
 
     @Override
-    public void alterar() {
-        Log.i(AppUtil.TAG, "alterar: Cliente");
+    public void alterar(Cliente obj) {
+
     }
 
     @Override
-    public void deletar() {
-        Log.i(AppUtil.TAG, "deletar: Cliente");
+    public void deletar(Cliente obj) {
+
     }
 
     @Override
-    public void listar() {
-        Log.i(AppUtil.TAG, "listar: Cliente");
+    public void listar(Cliente obj) {
+
     }
 }
 

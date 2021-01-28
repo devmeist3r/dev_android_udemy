@@ -1,8 +1,8 @@
 package com.devmeist3r.appminhaideiadb.controller;
 
-public interface ICrud {
-    public void incluir();
-    public void alterar();
-    public void deletar();
-    public void listar();
+public interface ICrud<T> {
+    public void incluir(T obj);
+    public void alterar(T obj);
+    public void deletar(T obj);
+    public void listar(T obj);
 }
