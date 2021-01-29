@@ -25,59 +25,20 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
     @Override
     public boolean incluir(Cliente obj) {
         dadoDoObjeto = new ContentValues();
-        // Key, Valor
-
-        /**
-         *
-         * dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
-         * ID é a chave primaria da tabela cliente
-         * é gerada automaticamente pelo SQLite a cada
-         * novo registro adicionado
-         * INSERIR
-         * SQL ->>> INSERT
-         * */
 
         dadoDoObjeto.put(ClienteDataModel.NOME, obj.getNome());
         dadoDoObjeto.put(ClienteDataModel.EMAIL, obj.getEmail());
 
-        /**
-         *
-         * Enviar os dados (dadoDoObjeto) para a classe AppDataBase
-         * utilizando um método capaz de adicionar o OBJ no banco de
-         * dados, tabela qualquer um (Cliente)
-         *
-         * */
-
-        return true;
+        return insert(ClienteDataModel.TABELA, dadoDoObjeto);
     }
 
     @Override
     public boolean alterar(Cliente obj) {
         dadoDoObjeto = new ContentValues();
-        // Key, Valor
-
-        /**
-         *
-         * dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
-         * ID é a chave primaria da tabela cliente
-         * é gerada automaticamente pelo SQLite a cada
-         * novo registro adicionado
-         * ALTERAR
-         * SQL ->>> UPDATE
-         * */
 
         dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
         dadoDoObjeto.put(ClienteDataModel.NOME, obj.getNome());
         dadoDoObjeto.put(ClienteDataModel.EMAIL, obj.getEmail());
-
-        /**
-         *
-         * Enviar os dados (dadoDoObjeto) para a classe AppDataBase
-         * utilizando um método capaz de alterar o OBJ no banco de
-         * dados, tabela qualquer um (Cliente), respeitando o ID
-         * ou PK (PrimaryKey)
-         *
-         * */
 
         return true;
     }
@@ -85,28 +46,8 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
     @Override
     public boolean deletar(Cliente obj) {
         dadoDoObjeto = new ContentValues();
-        // Key, Valor
-
-        /**
-         *
-         * dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
-         * ID é a chave primaria da tabela cliente
-         * é gerada automaticamente pelo SQLite a cada
-         * novo registro adicionado
-         * DELETAR
-         * SQL ->>> DELETE from TABELA where ID = ?????
-         * */
 
         dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
-
-        /**
-         *
-         * Enviar os dados (dadoDoObjeto) para a classe AppDataBase
-         * utilizando um método capaz de deletar o OBJ no banco de
-         * dados, tabela qualquer um (Cliente), respeitando o ID
-         * ou PK (PrimaryKey)
-         * Condição, o registro tem que ser igual ao ID informado
-         * */
 
         return true;
     }
