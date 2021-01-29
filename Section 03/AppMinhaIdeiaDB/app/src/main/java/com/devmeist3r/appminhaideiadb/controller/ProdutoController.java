@@ -41,10 +41,7 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto> {
     }
 
     @Override
-    public boolean deletar(Produto obj) {
-        dadoDoObjeto = new ContentValues();
-
-        dadoDoObjeto.put(ProdutoDataModel.ID, obj.getId());
+    public boolean deletar(int id) {
 
         return true;
     }

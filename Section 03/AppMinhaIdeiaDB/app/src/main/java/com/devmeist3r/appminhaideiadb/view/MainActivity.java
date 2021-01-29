@@ -33,18 +33,50 @@ public class MainActivity extends AppCompatActivity {
 
         clienteController = new ClienteController(getApplicationContext());
 
-        if (clienteController.incluir(objCliente)) {
+        //        incluir
+
+//        if (clienteController.incluir(objCliente)) {
+//            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+//                    + "incluido com sucesso", Toast.LENGTH_SHORT).show();
+//            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+//                    + " incluido com sucesso");
+//        } else {
+//            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+//                    + "nao incluido", Toast.LENGTH_SHORT).show();
+//            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+//                    + " nao incluido");
+//        }
+
+        //        excluir
+        objCliente.setId(4);
+
+        if (clienteController.deletar(objCliente.getId())) {
             Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
-                    + "incluido com sucesso", Toast.LENGTH_SHORT).show();
+                    + "deletado com sucesso", Toast.LENGTH_SHORT).show();
             Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
-                    + " incluido com sucesso");
+                    + " deletado com sucesso");
         } else {
             Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
-                    + "nao incluido", Toast.LENGTH_SHORT).show();
+                    + "nao excluido", Toast.LENGTH_SHORT).show();
             Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
-                    + " nao incluido");
+                    + " nao excluido");
         }
 
-        produtoController = new ProdutoController(getApplicationContext());
+        objCliente.setNome("Eren Jagger");
+        objCliente.setEmail("eren@mail.com");
+        objCliente.setId(2);
+
+        if (clienteController.alterar(objCliente)) {
+            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+                    + "atualizado com sucesso", Toast.LENGTH_SHORT).show();
+            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+                    + " atualizado com sucesso");
+        } else {
+            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+                    + "nao atualizado", Toast.LENGTH_SHORT).show();
+            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+                    + " nao atualizado");
+        }
+
     }
 }
