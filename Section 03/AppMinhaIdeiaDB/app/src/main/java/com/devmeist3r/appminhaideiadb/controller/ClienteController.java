@@ -9,7 +9,6 @@ import com.devmeist3r.appminhaideiadb.datamodel.ClienteDataModel;
 import com.devmeist3r.appminhaideiadb.datasource.AppDataBase;
 import com.devmeist3r.appminhaideiadb.model.Cliente;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteController extends AppDataBase implements ICrud<Cliente> {
@@ -34,7 +33,8 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
 
     @Override
     public boolean deletar(int id) {
-        return deletedById(ClienteDataModel.TABELA, id);
+        return deleteByID(ClienteDataModel.TABELA,id);
+
     }
 
     @Override
@@ -48,13 +48,8 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
         return update(ClienteDataModel.TABELA, dadoDoObjeto);
     }
 
-
-
     @Override
     public List<Cliente> listar() {
-
-        List<Cliente> lista = new ArrayList<>();
-
-        return lista;
+        return getAllClientes(ClienteDataModel.TABELA);
     }
 }

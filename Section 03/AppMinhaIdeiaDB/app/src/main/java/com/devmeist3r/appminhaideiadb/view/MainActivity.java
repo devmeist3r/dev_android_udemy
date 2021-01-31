@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(AppUtil.TAG, "onCreate: App Minha Ideia DataBase");
 
-        objCliente = new Cliente();
-        objCliente.setNome("Lucas Inocencio");
-        objCliente.setEmail("luksinocencio@gmail.com");
+//        objCliente = new Cliente();
+//        objCliente.setNome("Lucas Inocencio");
+//        objCliente.setEmail("luksinocencio@gmail.com");
 
         clienteController = new ClienteController(getApplicationContext());
 
@@ -48,35 +48,49 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //        excluir
-        objCliente.setId(4);
+//        objCliente.setId(4);
+//
+//        if (clienteController.deletar(objCliente.getId())) {
+//            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+//                    + "deletado com sucesso", Toast.LENGTH_SHORT).show();
+//            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+//                    + " deletado com sucesso");
+//        } else {
+//            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+//                    + "nao excluido", Toast.LENGTH_SHORT).show();
+//            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+//                    + " nao excluido");
+//        }
 
-        if (clienteController.deletar(objCliente.getId())) {
-            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
-                    + "deletado com sucesso", Toast.LENGTH_SHORT).show();
-            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
-                    + " deletado com sucesso");
-        } else {
-            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
-                    + "nao excluido", Toast.LENGTH_SHORT).show();
-            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
-                    + " nao excluido");
+//        for (int i = 0; i < 50; i++) {
+//
+//            objCliente = new Cliente();
+//
+//            objCliente.setNome("Eren Jagger");
+//            objCliente.setEmail(i+"eren@mail.com");
+//
+//            clienteController.incluir(objCliente);
+//
+//        }
+
+//        if (clienteController.alterar(objCliente)) {
+//            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+//                    + "atualizado com sucesso", Toast.LENGTH_SHORT).show();
+//            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+//                    + " atualizado com sucesso");
+//        } else {
+//            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
+//                    + "nao atualizado", Toast.LENGTH_SHORT).show();
+//            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
+//                    + " nao atualizado");
+//        }
+
+//        clienteController.listar();
+
+        for (Cliente obj: clienteController.listar()) {
+            Log.e("Retorno", "onCreate: "+obj.getId()+" "+obj.getNome()+" "+obj.getEmail());
         }
 
-        objCliente.setNome("Eren Jagger");
-        objCliente.setEmail("eren@mail.com");
-        objCliente.setId(2);
-
-        if (clienteController.alterar(objCliente)) {
-            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
-                    + "atualizado com sucesso", Toast.LENGTH_SHORT).show();
-            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
-                    + " atualizado com sucesso");
-        } else {
-            Toast.makeText(MainActivity.this, "Cliente " + objCliente.getNome()
-                    + "nao atualizado", Toast.LENGTH_SHORT).show();
-            Log.d(AppUtil.TAG, "Cliente " + objCliente.getNome()
-                    + " nao atualizado");
-        }
 
     }
 }
