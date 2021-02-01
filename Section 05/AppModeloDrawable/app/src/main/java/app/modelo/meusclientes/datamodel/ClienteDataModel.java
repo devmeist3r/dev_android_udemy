@@ -14,7 +14,7 @@ public class ClienteDataModel {
     public static final String BAIRRO = "bairro";
     public static final String CIDADE = "cidade";
     public static final String ESTADO = "estado";
-    public static final String TERMOS_DE_USO = "termoDeUso";
+    public static final String TERMOS_DE_USO = "termos_de_uso";
 
     public static String queryCriarTabela = "";
 

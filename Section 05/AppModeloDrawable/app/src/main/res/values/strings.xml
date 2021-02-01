@@ -19,5 +19,6 @@
 
     <!-- Opções do Menu Principal -->
     <string name="meu_perfil">Meu Perfil</string>
+    <string name="fragmento_adicionar_cliente">Adicionar cliente</string>
 
 </resources>
