@@ -1,4 +1,4 @@
-package app.modelo.meusclientes;
+package app.modelo.meusclientes.view;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,24 +18,31 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import app.modelo.meusclientes.R;
+import app.modelo.meusclientes.controller.ClienteController;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    // Gerenciamento dos fragmentos
     FragmentManager fragmentManager;
 
+    // Gerenciamento do menu drawer
     NavigationView navigationView;
 
+    // Gerenciamento do menu action bar
     Menu menu;
+
+    // Gerenciamento de cada item do menu drawer
     MenuItem nav_preto;
     MenuItem nav_vermelho;
     MenuItem nav_azul;
-
-    TextView txtTitulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -50,20 +56,24 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        // drawer_Layout é o layout padrão do aplicativo
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        // nav_view contém o layout do menu
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        txtTitulo = findViewById(R.id.txtTitulo);
-
         fragmentManager = getSupportFragmentManager();
 
+        // content_fragment usado para receber os layouts dos fragmentos
         fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+
+
+        ClienteController clienteController = new ClienteController(getBaseContext());
 
     }
 
@@ -110,7 +120,7 @@ public class MainActivity extends AppCompatActivity
             menu = navigationView.getMenu();
 
             nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto Ativado");
+            nav_preto.setTitle("Preto Ativo");
 
             nav_vermelho = menu.findItem(R.id.nav_vermelho);
             nav_vermelho.setTitle("Vermelho");

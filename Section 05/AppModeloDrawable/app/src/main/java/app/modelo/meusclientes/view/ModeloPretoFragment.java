@@ -1,4 +1,4 @@
-package app.modelo.meusclientes;
+package app.modelo.meusclientes.view;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -7,16 +7,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import app.modelo.meusclientes.R;
 
-public class ModeloVermelhoFragment extends Fragment {
+
+public class ModeloPretoFragment extends Fragment {
 
     View view;
 
-    public ModeloVermelhoFragment() {
+    public ModeloPretoFragment() {
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,11 +30,14 @@ public class ModeloVermelhoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.fragment_vermelho, container, false);
+        view =  inflater.inflate(R.layout.fragment_preto, container, false);
 
         TextView txtTitulo = view.findViewById(R.id.txtTitulo);
 
-        txtTitulo.setTextColor(ColorStateList.valueOf(Color.WHITE));
+        txtTitulo.setText(R.string.modelo_fragment);
+
+
+        txtTitulo.setTextColor(ColorStateList.valueOf(Color.CYAN));
 
         return view;
     }

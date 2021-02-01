@@ -3,10 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/preto"
-    tools:context=".ModeloPretoFragment">
-
-
-    <!-- Terceiro Passo -->
+    tools:context=".view.ModeloPretoFragment">
 
     <TextView
         android:id="@+id/txtTitulo"
@@ -17,6 +14,8 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        android:text="@string/modelo_fragment" />
+       />
+
+
 
 </FrameLayout>
