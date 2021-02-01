@@ -18,6 +18,8 @@ public class AdicionarClienteFragment extends Fragment {
     // Fragment - Classe responsável pela camada de VISÃO (Layout)
     View view;
 
+    TextView txtTitulo;
+
     public AdicionarClienteFragment() {
     }
 
@@ -33,7 +35,14 @@ public class AdicionarClienteFragment extends Fragment {
 
         view =  inflater.inflate(R.layout.fragment_adicionar_cliente, container, false);
 
+        iniciarComponentesDeLayout();
+
         return view;
+    }
+
+    private void iniciarComponentesDeLayout() {
+        txtTitulo = view.findViewById(R.id.txtTitulo);
+        txtTitulo.setText(R.string.adicionar_novo_cliente);
     }
 
 
