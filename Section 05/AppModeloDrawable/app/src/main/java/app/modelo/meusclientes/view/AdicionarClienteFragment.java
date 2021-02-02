@@ -118,8 +118,55 @@ public class AdicionarClienteFragment extends Fragment {
                     edtCep.requestFocus();
                 }
 
+                if (TextUtils.isEmpty(edtLogradouro.getText())) {
+                    isDadosOK = false;
+                    edtLogradouro.setError("Informe um logradouro válido");
+                    edtLogradouro.requestFocus();
+                }
+
+                if (TextUtils.isEmpty(edtNumero.getText())) {
+                    isDadosOK = false;
+                    edtNumero.setError("Informe um número válido");
+                    edtNumero.requestFocus();
+                }
+
+                if (TextUtils.isEmpty(edtBairro.getText())) {
+                    isDadosOK = false;
+                    edtBairro.setError("Informe um bairro válido");
+                    edtBairro.requestFocus();
+                }
+
+                if (TextUtils.isEmpty(edtCidade.getText())) {
+                    isDadosOK = false;
+                    edtCidade.setError("Informe um bairro válido");
+                    edtCidade.requestFocus();
+                }
+
+                if (TextUtils.isEmpty(edtEstado.getText())) {
+                    isDadosOK = false;
+                    edtEstado.setError("Informe um bairro válido");
+                    edtEstado.requestFocus();
+                }
+
                 if (isDadosOK) {
-//                    clienteController.incluir(novoCliente);
+
+                    novoCliente.setNome(edtNome.getText().toString());
+                    novoCliente.setTelefone(edtTelefone.getText().toString());
+                    novoCliente.setEmail(edtEmail.getText().toString());
+
+                    // CAST
+                    novoCliente.setCep(Integer.parseInt(edtCep.getText().toString()));
+
+                    novoCliente.setLogradouro(edtLogradouro.getText().toString());
+                    novoCliente.setNumero(edtNumero.getText().toString());
+                    novoCliente.setBairro(edtBairro.getText().toString());
+                    novoCliente.setCidade(edtCidade.getText().toString());
+                    novoCliente.setEstado(edtEstado.getText().toString());
+
+                    novoCliente.setTermosDeUso(chkTermosDeUso.isChecked());
+
+
+                    clienteController.incluir(novoCliente);
                     Log.i("log_add_cliente", "onClick: Dados correto...");
                 } else {
                     Log.i("log_add_cliente", "onClick: Dados incorreto...");
