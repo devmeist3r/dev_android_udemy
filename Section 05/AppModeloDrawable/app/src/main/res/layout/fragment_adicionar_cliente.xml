@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp"
@@ -121,7 +121,7 @@
             android:hint="Estado" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/chkTermosDeUso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -134,13 +134,13 @@
         >
 
         <Button
-            android:id="@+id/btCancelar"
+            android:id="@+id/btnCancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancelar" />
 
         <Button
-            android:id="@+id/btEnviar"
+            android:id="@+id/btnSalvar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enviar" />

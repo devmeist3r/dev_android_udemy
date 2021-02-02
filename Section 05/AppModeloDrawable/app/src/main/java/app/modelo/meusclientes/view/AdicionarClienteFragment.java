@@ -1,16 +1,21 @@
 package app.modelo.meusclientes.view;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import app.modelo.meusclientes.R;
+import app.modelo.meusclientes.controller.ClienteController;
+import app.modelo.meusclientes.model.Cliente;
 
 
 public class AdicionarClienteFragment extends Fragment {
@@ -19,6 +24,17 @@ public class AdicionarClienteFragment extends Fragment {
     View view;
 
     TextView txtTitulo;
+    EditText edtNome;
+    EditText edtTelefone;
+    EditText edtEmail;
+    EditText edtCep;
+    EditText edtLogradouro;
+    EditText edtNumero, edtBairro, edtCidade, edtEstado;
+    CheckBox chkTermosDeUso;
+    Button btnCancelar, btnSalvar;
+
+    Cliente novoCliente;
+    ClienteController clienteController;
 
     public AdicionarClienteFragment() {
     }
@@ -37,13 +53,80 @@ public class AdicionarClienteFragment extends Fragment {
 
         iniciarComponentesDeLayout();
 
+        escutarEventosDosBotoes();
+
         return view;
     }
 
     private void iniciarComponentesDeLayout() {
         txtTitulo = view.findViewById(R.id.txtTitulo);
         txtTitulo.setText(R.string.adicionar_novo_cliente);
+
+        edtNome = view.findViewById(R.id.edtNomeCompleto);
+        edtTelefone = view.findViewById(R.id.edtTelefone);
+        edtEmail = view.findViewById(R.id.edtEmail);
+        edtCep = view.findViewById(R.id.edtCep);
+        edtLogradouro = view.findViewById(R.id.edtLogradouro);
+        edtNumero = view.findViewById(R.id.edtNumero);
+        edtBairro = view.findViewById(R.id.edtBairro);
+        edtCidade = view.findViewById(R.id.edtCidade);
+        edtEstado = view.findViewById(R.id.edtEstado);
+        chkTermosDeUso = view.findViewById(R.id.chkTermosDeUso);
+        btnCancelar = view.findViewById(R.id.btnCancelar);
+        btnSalvar = view.findViewById(R.id.btnSalvar);
+
+        novoCliente = new Cliente();
+
+        clienteController = new ClienteController(getContext());
     }
 
+    private void escutarEventosDosBotoes() {
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                boolean isDadosOK = true;
+
+                if (TextUtils.isEmpty(edtNome.getText())) {
+                    isDadosOK = false;
+                    edtNome.setError("Digite o nome completo...");
+                    edtNome.requestFocus();
+                }
+
+                if (TextUtils.isEmpty(edtTelefone.getText())) {
+                    isDadosOK = false;
+                    edtTelefone.setError("Informe um número de telefone válido");
+                    edtTelefone.requestFocus();
+                }
+
+                if (TextUtils.isEmpty(edtEmail.getText())) {
+                    isDadosOK = false;
+                    edtEmail.setError("Informe um e-mail válido");
+                    edtEmail.requestFocus();
+                }
+
+                if (TextUtils.isEmpty(edtCep.getText())) {
+                    isDadosOK = false;
+                    edtCep.setError("Informe um CEP válido");
+                    edtCep.requestFocus();
+                }
+
+                if (isDadosOK) {
+//                    clienteController.incluir(novoCliente);
+                    Log.i("log_add_cliente", "onClick: Dados correto...");
+                } else {
+                    Log.i("log_add_cliente", "onClick: Dados incorreto...");
+                }
+
+            }
+        });
+    }
 
 }
