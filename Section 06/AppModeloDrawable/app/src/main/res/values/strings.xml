@@ -20,6 +20,7 @@
     <string name="fragmento_adicionar_cliente">Adicionar cliente</string>
     <string name="fragmento_listar_clientes">Lista de clientes</string>
     <string name="fragmento_listar_clientes_cards">Lista clientes (card)</string>
+    <string name="pesquisar_por_nome">Pesquisar por nome</string>
 
 
 </resources>

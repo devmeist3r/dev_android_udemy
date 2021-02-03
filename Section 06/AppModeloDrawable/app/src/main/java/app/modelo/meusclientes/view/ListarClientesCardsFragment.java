@@ -50,7 +50,7 @@ public class ListarClientesCardsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.fragment_listar_clientes, container, false);
+        view =  inflater.inflate(R.layout.fragment_listar_clientes_cards, container, false);
 
         TextView txtTitulo = view.findViewById(R.id.txtTitulo);
 
