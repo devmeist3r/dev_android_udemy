@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
         fragmentManager = getSupportFragmentManager();
 
         // content_fragment usado para receber os layouts dos fragmentos
-        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
 
 
         ClienteController clienteController = new ClienteController(getBaseContext());
@@ -115,60 +115,66 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         // TODO: opter ID para a opção selecionada no MENU DRAWER
-        if (id == R.id.nav_preto) {
+//        if (id == R.id.nav_preto) {
+//
+//            menu = navigationView.getMenu();
+//
+//            nav_preto = menu.findItem(R.id.nav_preto);
+//            nav_preto.setTitle("Preto Ativo");
+//
+//            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+//            nav_vermelho.setTitle("Vermelho");
+//
+//            nav_azul = menu.findItem(R.id.nav_azul);
+//            nav_azul.setTitle("Azul");
+//
+//            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+//
+//            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
+//
+//        } else if (id == R.id.nav_vermelho) {
+//
+//            menu = navigationView.getMenu();
+//
+//            nav_preto = menu.findItem(R.id.nav_preto);
+//
+//            nav_preto.setTitle("Preto");
+//
+//            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+//            nav_vermelho.setTitle("Vermelho Ativado");
+//
+//            nav_azul = menu.findItem(R.id.nav_azul);
+//            nav_azul.setTitle("Azul");
+//
+//            // TODO: Mudar a cor de todos os itens do menu programaticamente
+//            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+//
+//            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+//
+//        } else if (id == R.id.nav_azul) {
+//
+//            menu = navigationView.getMenu();
+//
+//            nav_preto = menu.findItem(R.id.nav_preto);
+//            nav_preto.setTitle("Preto");
+//
+//            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+//            nav_vermelho.setTitle("Vermelho");
+//
+//            nav_azul = menu.findItem(R.id.nav_azul);
+//            nav_azul.setTitle("Azul Ativado");
+//
+//            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+//
+//            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
+//
+//        }
 
-            menu = navigationView.getMenu();
-
-            nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto Ativo");
-
-            nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
-
-            nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul");
-
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
-
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloPretoFragment()).commit();
-
-        } else if (id == R.id.nav_vermelho) {
-
-            menu = navigationView.getMenu();
-
-            nav_preto = menu.findItem(R.id.nav_preto);
-
-            nav_preto.setTitle("Preto");
-
-            nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho Ativado");
-
-            nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul");
-
-            // TODO: Mudar a cor de todos os itens do menu programaticamente
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
-
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
-
-        } else if (id == R.id.nav_azul) {
-
-            menu = navigationView.getMenu();
-
-            nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto");
-
-            nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
-
-            nav_azul = menu.findItem(R.id.nav_azul);
-            nav_azul.setTitle("Azul Ativado");
-
-            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
-
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
-
-        } else if (id == R.id.nav_adicionar_cliente) {
+        if (id == R.id.nav_listar_cliente) {
+            setTitle("Lista de clientes");
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
+        }
+        else if (id == R.id.nav_adicionar_cliente) {
             setTitle("Novo Cliente");
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarClienteFragment()).commit();
         }

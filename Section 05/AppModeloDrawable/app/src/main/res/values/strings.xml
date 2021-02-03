@@ -21,5 +21,6 @@
     <string name="meu_perfil">Meu Perfil</string>
     <string name="fragmento_adicionar_cliente">Adicionar cliente</string>
     <string name="adicionar_novo_cliente">Adicionar Novo Cliente</string>
+    <string name="listar_clientes">Lista de clientes</string>
 
 </resources>
