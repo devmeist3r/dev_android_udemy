@@ -1,6 +1,9 @@
 package app.modelo.meusclientes.view;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +75,24 @@ public class ListarClientesFragment extends Fragment {
         clienteAdapter = new ArrayAdapter<>(getContext(), R.layout.listar_cliente_item, R.id.txtItemLista, clientes);
 
         listView.setAdapter(clienteAdapter);
+
+        edtPesquisarNome.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence filtro, int start, int count, int after) {
+                ListarClientesFragment.this.clienteAdapter.getFilter().filter(filtro);
+                Log.i("add_ListView", "beforeTextChanged: " + filtro);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         return view;
     }
