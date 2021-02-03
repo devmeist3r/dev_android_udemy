@@ -60,7 +60,7 @@ public class AdicionarClienteFragment extends Fragment {
 
     private void iniciarComponentesDeLayout() {
         txtTitulo = view.findViewById(R.id.txtTitulo);
-        txtTitulo.setText(R.string.adicionar_novo_cliente);
+        txtTitulo.setText(R.string.fragmento_adicionar_cliente);
 
         edtNome = view.findViewById(R.id.edtNomeCompleto);
         edtTelefone = view.findViewById(R.id.edtTelefone);

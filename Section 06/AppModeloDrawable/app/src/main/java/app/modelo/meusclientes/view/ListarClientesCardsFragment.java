@@ -23,7 +23,7 @@ import app.modelo.meusclientes.controller.ClienteController;
 import app.modelo.meusclientes.model.Cliente;
 
 
-public class ListarClientesFragment extends Fragment {
+public class ListarClientesCardsFragment extends Fragment {
 
     // Fragment - Classe responsável pela camada de VISÃO (Layout)
     View view;
@@ -38,7 +38,7 @@ public class ListarClientesFragment extends Fragment {
     ClienteController clienteController;
     Cliente obj;
 
-    public ListarClientesFragment() {
+    public ListarClientesCardsFragment() {
     }
 
     @Override
@@ -75,7 +75,7 @@ public class ListarClientesFragment extends Fragment {
         edtPesquisarNome.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence filtro, int start, int count, int after) {
-                ListarClientesFragment.this.clienteAdapter.getFilter().filter(filtro);
+                ListarClientesCardsFragment.this.clienteAdapter.getFilter().filter(filtro);
                 Log.i("add_ListView", "beforeTextChanged: " + filtro);
             }
 
