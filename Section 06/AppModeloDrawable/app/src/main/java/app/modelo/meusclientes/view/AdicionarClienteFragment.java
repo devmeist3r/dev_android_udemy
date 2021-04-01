@@ -62,15 +62,15 @@ public class AdicionarClienteFragment extends Fragment {
         txtTitulo = view.findViewById(R.id.txtTitulo);
         txtTitulo.setText(R.string.fragmento_adicionar_cliente);
 
-        edtNome = view.findViewById(R.id.edtNomeCompleto);
-        edtTelefone = view.findViewById(R.id.edtTelefone);
-        edtEmail = view.findViewById(R.id.edtEmail);
-        edtCep = view.findViewById(R.id.edtCep);
-        edtLogradouro = view.findViewById(R.id.edtLogradouro);
-        edtNumero = view.findViewById(R.id.edtNumero);
-        edtBairro = view.findViewById(R.id.edtBairro);
-        edtCidade = view.findViewById(R.id.edtCidade);
-        edtEstado = view.findViewById(R.id.edtEstado);
+        edtNome = view.findViewById(R.id.editNomeCompleto);
+        edtTelefone = view.findViewById(R.id.editTelefone);
+        edtEmail = view.findViewById(R.id.editEmail);
+        edtCep = view.findViewById(R.id.editCep);
+        edtLogradouro = view.findViewById(R.id.editLogradouro);
+        edtNumero = view.findViewById(R.id.editNumero);
+        edtBairro = view.findViewById(R.id.editBairro);
+        edtCidade = view.findViewById(R.id.editCidade);
+        edtEstado = view.findViewById(R.id.editEstado);
         chkTermosDeUso = view.findViewById(R.id.chkTermosDeUso);
         btnCancelar = view.findViewById(R.id.btnCancelar);
         btnSalvar = view.findViewById(R.id.btnSalvar);
